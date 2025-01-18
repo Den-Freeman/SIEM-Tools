@@ -1,0 +1,8 @@
+#CHRONICLE DOCUMENTATION: https://cloud.google.com/chronicle/docs/review-security-alert
+
+#Here’s an example of a simple UDM search that uses the event metadata field to locate events relating to user logins:
+#metadata.event_type = “USER_LOGIN”: This UDM field metadata.event_type contains information about the event type.
+#This includes information like timestamp, network connection, user authentication, and more.
+#Here, the event type specifies USER_LOGIN, which searches for events relating to authentication.
+
+$metadata.event_type = “USER_LOGIN” 
