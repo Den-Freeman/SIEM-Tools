@@ -1,0 +1,16 @@
+#SPLUNK DOCUMENTATION: https://docs.splunk.com/Documentation/Splunk/9.0.1/Search/GetstartedwithSearch
+
+#Here is an example of a basic SPL search that is querying an index for a failed event:
+index=main fail
+
+#SPL also uses the pipe character | to separate the individual commands in the search.
+#It's also used to chain commands together so that the output of one command combines into the next command.
+#chart count by host: This command tells Splunk to transform the search results by creating a chart according to the  count or number of events.
+#The argument by host tells Splunk to list the events by host, which are the names of the devices the events come from.
+#This command can be helpful in identifying hosts with excessive failure counts in an environment.
+index=main fail| chart count by host
+
+#A wildcard is a special character that can be substituted with any other character
+#fail*: The wildcard after fail represents any character. This tells Splunk to search for all possible endings that contain the term fail
+This expands the search results to return any event that contains the term fail such as “failed” or “failure”
+$index=main fail*
